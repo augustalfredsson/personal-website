@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 
 const Home = () => (
   <Frame>
-    <SEO title="Home" />
+    <SEO title="August Alfredsson" />
     <Grid>
 
       <Header>
