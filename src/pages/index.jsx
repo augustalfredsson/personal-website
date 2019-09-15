@@ -10,7 +10,6 @@ const Home = () => (
   <Frame>
     <SEO title="August Alfredsson" />
     <Grid>
-
       <Header>
         <Name>August Alfredsson</Name>
       </Header>
@@ -38,9 +37,9 @@ const Grid = styled.div`
   grid-gap: 20px;
   justify-items: start;
 
-  @media (max-width: 425px) {
+  @media (max-width: ${(p) => p.theme.breakpoint.mobile}) {
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: minmax(0, 425px);
+    grid-template-columns: minmax(0, ${(p) => p.theme.breakpoint.mobile});
     grid-template-areas: 
           "header"
           "sidebar"
@@ -60,7 +59,7 @@ const SidebarContainer = styled.div`
   margin: 0 0 0 20px;
   grid-area: sidebar;
 
-  @media (max-width: 425px) {
+  @media (max-width: ${(p) => p.theme.breakpoint.mobile}) {
     margin: 0 auto;
   }
 `;
