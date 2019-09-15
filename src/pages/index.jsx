@@ -40,7 +40,7 @@ const Grid = styled.div`
 
   @media (max-width: 425px) {
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 425px);
     grid-template-areas: 
           "header"
           "sidebar"
