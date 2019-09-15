@@ -15,7 +15,6 @@ const Home = () => (
         <Name>August Alfredsson</Name>
       </Header>
       <SidebarContainer>
-
         <Sidebar />
       </SidebarContainer>
       <Description>Software developer in Malmö</Description>
@@ -53,7 +52,7 @@ const Grid = styled.div`
 const Header = styled.header`
   width: 100%;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0 0 0;
   grid-area: header;
 `;
 
@@ -71,6 +70,7 @@ const Description = styled.p`
   font-weight: normal;
   min-width: 375px;
   grid-area: main;
+  margin: 0 20px;
 `;
 
 const Name = styled.h1`
