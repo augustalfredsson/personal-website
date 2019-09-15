@@ -18,5 +18,7 @@ export default Frame;
 const FrameWrapper = styled.div`
   width: 100%;
   height: 100%;
-  color: #1c1c1c;
+  min-height: 100vh;
+  color: #2b2525;
+  background: #f9f8f4;
 `;
