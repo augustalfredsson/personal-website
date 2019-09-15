@@ -53,8 +53,8 @@ const Item = styled.li`
 `;
 
 const ItemLabel = styled.span`
-  background: ${(p) => (p.selected ? 'rgba(43, 37, 37, 0.8)' : 'transparent')};
-  color: ${(p) => (p.selected ? '#f9f8f4' : '#2b2525')};
+  background: ${(p) => (p.selected ? 'rgba(255,255,255, 0.7)' : 'transparent')};
+  color: ${(p) => (p.selected ? p.theme.textColorWithAlpha(0.9) : p.theme.textColorWithAlpha(0.4))};
   padding: 10px 20px;
   border-radius: 10px;
 `;
