@@ -14,7 +14,14 @@ const Home = () => (
         <Name>August Alfredsson</Name>
       </Header>
       <SidebarContainer>
-        <Sidebar />
+        <Sidebar
+          selectedItem="Home"
+          items={[
+            { title: 'Home', path: '/' },
+            { title: 'Experiments', path: '/experiments' },
+            { title: 'Blog', path: '/blog' },
+          ]}
+        />
       </SidebarContainer>
       <Description>Software developer in Malmö</Description>
     </Grid>
@@ -25,26 +32,28 @@ const Home = () => (
 export default Home;
 
 const Grid = styled.div`
- /* Grid styles */
+  /* Grid styles */
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: min-content minmax(325px, 1fr) minmax(0, 1fr);
-  grid-template-areas: 
-        "header header header"
-        "sidebar main annotations"
-        "footer footer footer";
+  grid-template-columns: 
+    min-content minmax(325px, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    'header header header'
+    'sidebar main annotations'
+    'footer footer footer';
   align-items: start;
   grid-gap: 20px;
   justify-items: start;
 
   @media (max-width: ${(p) => p.theme.breakpoint.mobile}) {
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: minmax(0, ${(p) => p.theme.breakpoint.mobile});
-    grid-template-areas: 
-          "header"
-          "sidebar"
-          "main"
-          "footer";
+    grid-template-columns: 
+      minmax(0, ${(p) => p.theme.breakpoint.mobile});
+    grid-template-areas:
+      'header'
+      'sidebar'
+      'main'
+      'footer';
   }
 `;
 

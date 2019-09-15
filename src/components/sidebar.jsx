@@ -1,34 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Sidebar = () => {
-  const [selected, setSelected] = useState(0);
+const Sidebar = ({ selectedItem, items }) => (
+  <List>
+    {items.map((item) => (
+      <Item>
+        <Link href={item.path}>
+          <ItemLabel selected={item.title === selectedItem}>
+            {item.title}
+          </ItemLabel>
+        </Link>
+      </Item>
+    ))}
 
-  return (
-
-    <List>
-      <Item>
-        <ItemLabel selected={selected === 0} onClick={() => setSelected(0)}>
-            Home
-        </ItemLabel>
-      </Item>
-      <Item>
-        <ItemLabel selected={selected === 1} onClick={() => setSelected(1)}>
-            Experiments
-        </ItemLabel>
-      </Item>
-      <Item>
-        <ItemLabel selected={selected === 2} onClick={() => setSelected(2)}>
-            Blog
-        </ItemLabel>
-      </Item>
-    </List>
-  );
-};
+  </List>
+);
 Sidebar.propTypes = {
-
+  selectedItem: PropTypes.number.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
 export default Sidebar;
 
 const List = styled.ul`
@@ -57,4 +49,9 @@ const ItemLabel = styled.span`
   color: ${(p) => (p.selected ? p.theme.textColorWithAlpha(0.9) : p.theme.textColorWithAlpha(0.4))};
   padding: 10px 20px;
   border-radius: 10px;
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+
 `;
