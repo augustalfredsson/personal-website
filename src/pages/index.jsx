@@ -5,14 +5,14 @@ import '../fonts/Inter-Regular.woff2';
 import Frame from '../components/frame';
 import SEO from '../components/seo';
 import Sidebar from '../components/sidebar';
+import Grid from '../components/grid';
+import PageHeader from '../components/pageHeader';
 
 const Home = () => (
   <Frame>
     <SEO title="August Alfredsson" />
     <Grid>
-      <Header>
-        <Name>August Alfredsson</Name>
-      </Header>
+      <PageHeader title="August Alfredsson" />
       <SidebarContainer>
         <Sidebar
           selectedItem="Home"
@@ -23,7 +23,7 @@ const Home = () => (
           ]}
         />
       </SidebarContainer>
-      <Description>Software developer in Malmö</Description>
+      <Description>Web developer in Malmö</Description>
     </Grid>
     <Link to="/page-2/" />
   </Frame>
@@ -31,43 +31,9 @@ const Home = () => (
 
 export default Home;
 
-const Grid = styled.div`
-  /* Grid styles */
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: 
-    min-content minmax(325px, 1fr) minmax(0, 1fr);
-  grid-template-areas:
-    'header header header'
-    'sidebar main annotations'
-    'footer footer footer';
-  align-items: start;
-  grid-gap: 20px;
-  justify-items: start;
-
-  @media (max-width: ${(p) => p.theme.breakpoint.mobile}) {
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: 
-      minmax(0, ${(p) => p.theme.breakpoint.mobile});
-    grid-template-areas:
-      'header'
-      'sidebar'
-      'main'
-      'footer';
-  }
-`;
-
-const Header = styled.header`
-  width: 100%;
-  text-align: center;
-  padding: 20px 0 0 0;
-  grid-area: header;
-`;
-
 const SidebarContainer = styled.div`
   margin: 0 0 0 20px;
   grid-area: sidebar;
-
   @media (max-width: ${(p) => p.theme.breakpoint.mobile}) {
     margin: 0 auto;
   }
@@ -79,9 +45,4 @@ const Description = styled.p`
   min-width: 375px;
   grid-area: main;
   margin: 0 20px;
-`;
-
-const Name = styled.h1`
-  font-family: 'Crimson Pro';
-  margin: 0;
 `;
