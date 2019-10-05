@@ -7,7 +7,7 @@ const Sidebar = ({ selectedItem, items }) => (
   <nav>
     <List>
       {items.map((item) => (
-        <Item>
+        <Item key={item.title}>
           <Link href={item.path} to={item.path}>
             <ItemLabel selected={item.title === selectedItem}>
               {item.title}
