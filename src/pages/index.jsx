@@ -42,7 +42,6 @@ const SidebarContainer = styled.div`
 const Description = styled.p`
   font-family: 'Inter Regular';
   font-weight: normal;
-  min-width: 375px;
   grid-area: main;
   margin: 0 20px;
 `;
